@@ -26,31 +26,44 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.1.css" />
         <title>Hello World</title>
+        <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.1.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
   
-    <div data-role="page">
-      <div data-role="header">
-        <h1>Welcome To My Homepage</h1>
-      </div>
-      <div data-role="main" class="ui-content">
-        <p>I Am Now A Mobile Developer!!</p>
-        <hr>
-        <label>Name</label>
-        <input type="text"></input>
-        <hr>
-        <label>Email</label>
-        <input type="text"></input>
-        <hr>
-        <button>submit</button>
-       </div>
-    <div data-role="footer">
-        <h1>Footer Text</h1>
+    <div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Welcome!</p>
+    <a href="#pagetwo">Go to Page Two</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div> 
+
+<div data-role="page" data-dialog="true" id="pagetwo">
+  <div data-role="header">
+    <h1>I'm A Dialog Box!</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>The dialog box is different from a normal page, it is displayed on top of the current page and it will not span the entire width of the page. The dialog has also an icon of "X" in the header to close the box.</p>
+    <a href="#pageone">Go to Page One</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text In Dialog</h1>
+  </div>
+</div> 
     </div>
-    </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        
         <script type="text/javascript">
             app.initialize();
         </script>
