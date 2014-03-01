@@ -43,15 +43,32 @@
   <div data-role="navbar">
     <ul>
       <li><a href="#homepage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
-      <li><a href="./register.html" data-icon="star" >Register</a></li>
-      <li><a href="./q.html" data-icon="lock">Login</a></li>
+      <li><a href="./register.php" data-icon="star" >Register</a></li>
+      <li><a href="./login.php" data-icon="lock">Login</a></li>
     </ul>
   </div>
 
   </div>
 
   <div data-role="main" class="ui-content">
-  
+  	
+  	<script>
+  	$(document).ready(function(){
+	 	
+	$.post("http://localhost/epics/query.php",
+  {
+    name:"Donald Duck",
+    city:"Duckburg"
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+ 	 
+ 	 
+ 	 alert("jquery");
+ 	 
+ });
+	</script>
           
   </div>
 
