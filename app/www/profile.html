@@ -42,18 +42,25 @@
 
   <div data-role="navbar">
     <ul>
-      <li><a href="#homepage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
-      <li><a href="./register.html" data-icon="star" rel="external" >Register</a></li>
-      <li><a href="./login.html" data-icon="lock" rel="external">Login</a></li>
+      <li><a href="./index.html" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+      <li><a href="./search.html" data-icon="search" rel="external" >Search</a></li>
+      <li><a href="./login.html" data-icon="gear" rel="external">Logout</a></li>
     </ul>
   </div>
 
   </div>
 
   <div data-role="main" class="ui-content">
-  
-  <a href="./profile.html" data-role="button" data-theme="b" data-icon="grid">Go to my profile</a>
-  
+  		<fieldset>
+  			<div id="dp" >
+  				<img src="./img/nilayan.jpg" style="margin-left:40%;width:25%;"/>
+  			</div>
+  			<div data-role="fieldcontain">
+  			<textarea type="text" id=postbox" data-clear-btn="true" placeholder="What's on your mind?" ></textarea>
+  			<button name="post" id="post" class="ui-btn-inline" data-icon="check" data-theme="b" 
+  			data-inline="true" style="float:right;">Post</button>
+  			</div>
+  		</fieldset>
           
   </div>
 

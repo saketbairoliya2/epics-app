@@ -37,28 +37,21 @@
 
   <div data-role="navbar">
     <ul>
-      <li><a href="#homepage" data-icon="home" >Home</a></li>
-      <li><a href="./register.html" data-icon="star" class="ui-btn-active ui-state-persist" >Register</a></li>
-      <li><a href="./login.html" data-icon="lock">Login</a></li>
+      <li><a href="#./index.html" data-icon="home" >Home</a></li>
+      <li><a href="./register.html" data-icon="star"  >Register</a></li>
+      <li><a href="./login.html" data-icon="lock" class="ui-btn-active ui-state-persist">Login</a></li>
     </ul>
   </div>
 
   <div data-role="main" class="ui-content">
   <form data-ajax="false">
   <fieldset>
-                        <label for="fname" class="ui-hidden-accessible">First name</label>
-                        <input type="text" name="fname" id="fname" placeholder="First name"/>                   
-                        <label for="lname" class="ui-hidden-accessible">Last name</label>
-                        <input type="text" name="lname" id="lname" placeholder="Last name"/>
-                        <label for="email" class="ui-hidden-accessible">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email"/>
-                        <label for="phone" class="ui-hidden-accessible">Phone</label>
-                        <input type="text" name="phone" id="phone" placeholder="Phone"/>
-                        <label for="username" class="ui-hidden-accessible">Last name</label>
-                        <input type="text" name="username" id="username" placeholder="Username"/>                               
-                        <label for="password" class="ui-hidden-accessible">Enter your password:</label>
-                        <input type="password" name="password" id="password" placeholder="Password"/> 
-  <button name="submit" id="submit">Submit</button>
+                        
+              <label for="username" class="ui-hidden-accessible">Last name</label>
+              <input type="text" name="username" id="username" placeholder="Username"/>                               
+              <label for="password" class="ui-hidden-accessible">Enter your password:</label>
+              <input type="password" name="password" id="password" placeholder="Password"/> 
+			  <button name="submit" id="submit">Submit</button>
   </fieldset>
   </form>
   </div>
@@ -84,43 +77,38 @@
   </div>
 
   </div>
-        
         <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.1.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-                
+        <script type="text/javascript" src="js/index.js"></script>     
+        
         <script type="text/javascript">
             app.initialize();
         </script>
         
         <script>
-        	$('#submit').click(function(){
-        		//alert("submitting");
-        		$.ajax({
-                url: 'http://10.0.2.2/epics/register.php',
+          $('#submit').click(function(){
+            //alert("submitting");
+            $.ajax({
+                url: 'http://10.0.2.2/epics/login.php',
                 data :
                 {
-                	fname : $('#fname').val(),
-                	lname : $('#lname').val(),
-                	email : $('#email').val(),
-                	phone : $('#phone').val(),
-                	username : $('#username').val(),
-                	password:$('#password').val()
+                  username : $('#username').val(),
+                  password:$('#password').val()
                 },
-	          dataType: 'jsonp',
-    	      jsonp: 'jsoncallback',
-    	      timeout: 5000,
-    	      success: function(data, status){
-                            if(data[1]==1)
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            timeout: 5000,
+            success: function(data, status){
+            				 if(data[1]==1)
 	                             $.mobile.changePage("#pagetwo");
 	                         else
-	                         	alert(data[0]+data[1]);
+	                         	alert(data[0]);
                         }
        });
-        		
-        		return false;
-        	});
+            
+            return false;
+          });
         </script>
         
     </body>
