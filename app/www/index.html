@@ -32,6 +32,13 @@
         <script type="text/javascript" src="js/jquery.mobile-1.4.1.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        
+        <style>
+        .buttondiv{
+        	width:100%;
+        }
+        </style>
+        
     </head>
     <body>
   
@@ -51,10 +58,18 @@
   </div>
 
   <div data-role="main" class="ui-content">
-  
-  <a href="./profile.html" data-role="button" data-theme="b" data-icon="grid">Go to my profile</a>
-  
-          
+  	<div id="eat" class="buttondiv" >
+		<img src="./img/hungry1.png" no-repeat/>
+	</div>
+    <div id="toilet" class="buttondiv">
+		<img src="./img/toilet1.png" no-repeat/>
+	</div>
+	<div id="drink" class="buttondiv">
+		<img src="./img/thirsty1.png" no-repeat/>
+	</div>
+	<div id="play" class="buttondiv">
+		<img src="./img/games1.png" no-repeat/>
+	</div>      
   </div>
 
   <div data-role="footer" data-position="fixed">
@@ -62,12 +77,71 @@
   </div>
 </div> 
 
+<div id="eatpage" data-role="page">
+<div data-role="header">
+	<h1>EAT</h1>
+</div>
+<div data-role="main" class="ui-content">
+	<img src="./img/hungry.jpg"/>
+</div>
+<div data-role="footer" data-position="fixed">
+	<h1>FOOTER</h1>
+</div>
+</div>
+
+<div id="toiletpage" data-role="page">
+<div data-role="header" >
+	<h1>TOILET</h1>
+</div>
+<div data-role="main" class="ui-content">
+	<img src="./img/toilet.jpg"/>
+</div>
+<div data-role="footer" data-position="fixed">
+	<h1>FOOTER</h1>
+</div>
+</div>
+
+<div id="drinkpage" data-role="page">
+<div data-role="header">
+	<h1>DRINK</h1>
+</div>
+<div data-role="main" class="ui-content">
+	<img src="./img/thirsty.jpg"/>
+</div>
+<div data-role="footer" data-position="fixed">
+	<h1>FOOTER</h1>
+</div>
+</div>
+
+<div id="playpage" data-role="page">
+<div data-role="header">
+	<h1>PLAY</h1>
+</div>
+<div data-role="main" class="ui-content">
+	<img src="./img/games.jpg"/>
+</div>
+<div data-role="footer" data-position="fixed">
+	<h1>FOOTER</h1>
+</div>
+</div>
+
         <script type="text/javascript">
             app.initialize();
         </script>
 
         <script type="text/javascript">
-            
+            $('#eat').click(function(){
+            	$.mobile.changePage("#eatpage");
+            });
+            $('#toilet').click(function(){
+				$.mobile.changePage("#toiletpage");
+            });
+            $('#drink').click(function(){
+            	$.mobile.changePage("#drinkpage");
+            });
+            $('#play').click(function(){
+            	$.mobile.changePage("#playpage");
+            });
         </script>
 
     </body>
